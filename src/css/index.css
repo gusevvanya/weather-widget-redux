@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.weatherWidget {
+	margin: 50px auto;
+	padding: 15px;
+	width: 80%;
+	max-width: 1000px;
+	border: 1px solid #999;
+}
+	.weatherWidget:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.search {
+		margin-bottom: 60px;
+		text-align: center;
+	}
+	.cities {
+		float: left;
+	}
+		.city {
+			display: block;
+			position: relative;
+			margin-bottom: 15px;
+			width: 100px;
+			height: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px;
+			box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+			cursor: pointer;
+			transition: all .3s;
+		}
+			.close {
+				display: inline-block;
+				position: absolute;
+				top: 6px;
+				right: 10px;
+				font-size: 15px;
+				cursor: pointer;
+				transition: all .1s;
+			}
+				.close:hover {
+					color: red;					
+				}
+		.city.active,
+		.city:hover {
+			background: rgba(0,0,0, .2);
+			text-decoration: none;
+		}
+	.weather {
+		float: right;
+		width: calc(100% - 115px);
+		padding-top: 50px;
+		text-align: center;
+		font-size: 33px;
+	}
+
+
+.messageList {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	padding: 30px 30px 0 0 ;
+}
+	.messageList li {
+		margin: 0 0 10px;
+		width: 100%;
+		padding: 4px 20px;
+		text-align: center;
+		list-style-type: none;
+		font-size: 16px;
+		background: rgba(0,0,0,.3);
+	}
+	.messageList li.error {
+		color: red;
+	}
+	.messageList li.success {
+		color: green;
+	}
+	.messageList button {
+		position: absolute;
+		top: 5px;
+		right: 0;
+	}
