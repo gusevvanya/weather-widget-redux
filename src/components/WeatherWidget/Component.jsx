@@ -7,47 +7,45 @@ import MessageList from '../MessageList/MessageList';
 
 const WeatherWidget = ({
   cities,
-  currentCity,
+  // currentCity,
   currentWeather,
   onSearchSubmit,
   onCityClick,
   onDeleteCityClick,
   messages,
   onClearMessageClick,
-  children
+  children,
+  currentCity1,
 }) => {
+  const currentCity = currentCity1;
+
   return (
     <div className="weatherWidget">
-
-      <SearchForm 
+      <SearchForm
         onSearchSubmit={onSearchSubmit}
       />
-
-      {cities && 
-        <CitiesList 
-          cities={cities} 
+      {(cities.length !== 0) &&
+        <CitiesList
+          cities={cities}
           currentCity={currentCity}
           onCityClick={onCityClick}
           onDeleteCityClick={onDeleteCityClick}
         />
       }
-
-      {currentCity  && 
-        <WeatherContent 
+      {(currentCity.length !== 0) &&
+        <WeatherContent
           weather={currentWeather}
           currentCity={currentCity}
         />
       }
 
-      {messages &&
+      {(messages.length !== 0) &&
         <MessageList
           messages={messages}
           onClearMessageClick={onClearMessageClick}
         />
       }
-
       {children}
-
     </div>
   );
 };

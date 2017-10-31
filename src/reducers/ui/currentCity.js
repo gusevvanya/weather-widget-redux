@@ -1,4 +1,4 @@
-export default function ui(state = null, action) {
+export default function ui(state = '', action) {
   switch (action.type) {
     case 'SET_CURRENT_CITY':
       return action.city;
@@ -6,4 +6,4 @@ export default function ui(state = null, action) {
     default:
       return state;
   }
-};
+}

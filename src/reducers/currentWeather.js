@@ -1,4 +1,4 @@
-export default function currentWeather(state = null, action) {
+export default function currentWeather(state = [], action) {
   switch (action.type) {
     case 'SET_WEATHER':
       return action.weather;
@@ -6,4 +6,4 @@ export default function currentWeather(state = null, action) {
     default:
       return state;
   }
-};
+}

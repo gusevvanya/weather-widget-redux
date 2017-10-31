@@ -1,33 +1,30 @@
 const initialState = ['London', 'Kiev'];
 
-export default function cities(state = initialState, action) {
-  let cities;
+const deleteCity = (state, city) => (
+  state.filter(el => (city !== el))
+);
 
+export default function (state = initialState, action) {
   switch (action.type) {
     case 'ADD_CITY':
       return [...state, action.city];
 
     case 'DELETE_CITY':
-    
-      cities = state.filter((el) => {
-        return (action.city === el) ? false : true;
-      });
-
-      return cities;
+      return deleteCity(state, action.city);
 
     default:
       return state;
   }
-};
+}
 
 export const isCityExist = (state, city) => {
-  for(let i = 0; i < state.cities.length; i++) {
+  for (let i = 0; i < state.cities.length; i += 1) {
     const value = state.cities[i];
 
-    if(city === value) {
+    if (city === value) {
       return true;
     }
   }
-    
-    return false;
+
+  return false;
 };

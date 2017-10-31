@@ -1,44 +1,38 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux'
-import { fetchCity } from '../actions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchCity } from '../actions/cities';
 
 const weatherIntervalTime = 10 * 60 * 1000;
 
 function addIntervalUpdateWeather(WrappedComponent) {
   class addIntervalUpdateWeatherWrapComponent extends Component {
-    
     componentDidMount() {
       this.setWeatherInterval();
-    };
+    }
     componentWillUnmount() {
       clearInterval(this.updateWeatherTimerId);
-    };
-    setWeatherInterval = () => {
+    }
+    setWeatherInterval() {
       this.updateWeatherTimerId = setInterval(() => {
         this.props.fetchCity(this.props.currentCity);
       }, weatherIntervalTime);
-
-    };
+    }
     render() {
-      return <WrappedComponent {...this.props}/>
-    };
-  };
-
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      fetchCity: (city) => {
-        dispatch(fetchCity(city));
-      }
+      return <WrappedComponent {...this.props} />;
     }
-  };
+  }
 
-  const mapStateToProps = (state) => {
-    return {
-      currentCity: state.currentCity,
-    }
-  };
+  const mapDispatchToProps = dispatch => ({
+    fetchCity: (city) => {
+      dispatch(fetchCity(city));
+    },
+  });
+
+  const mapStateToProps = state => ({
+    currentCity: state.currentCity,
+  });
 
   return connect(mapStateToProps, mapDispatchToProps)(addIntervalUpdateWeatherWrapComponent);
-};
+}
 
 export default addIntervalUpdateWeather;

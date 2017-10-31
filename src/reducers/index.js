@@ -1,13 +1,11 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 import cities from './cities';
 import currentWeather from './currentWeather';
-import currentCity from './ui/currentCity';
-import messages from './ui/messages';
+import ui from './ui';
 
 export default combineReducers({
   cities,
   currentWeather,
-  currentCity,
-  messages
+  ui,
 });
