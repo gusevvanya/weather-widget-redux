@@ -5,6 +5,28 @@ const addCity = (city) => ({
 	city
 });
 
+const setCurrentWeather = (weather) => ({
+	type: 'SET_WEATHER',
+	weather
+});
+
+const setCurrentCity = (city) => ({
+	type: 'SET_CURRENT_CITY',
+	city
+});
+
+const addMessage = (value, type) => ({
+	type: 'ADD_MESSAGES',
+	value,
+	messageType: type
+});
+
+export const deleteMessages = (city) => {	
+	return {
+		type: 'DELETE_MESSAGES',
+	};
+};
+
 export const deleteCity = (city) => {
 	return (dispatch, getState) => {
 		if(getState().currentCity === city) {			
@@ -16,29 +38,6 @@ export const deleteCity = (city) => {
 			type: 'DELETE_CITY',
 			city
 		});
-	};
-};
-
-const setCurrentWeather = (weather) => ({
-	type: 'SET_WEATHER',
-	weather
-});
-
-const setCurrentCity = (city) => ({
-	type: 'SET_CURRENT_CITY',
-	city
-});
-
-const addMessage = (value, type) => {
-	return {
-		type: 'ADD_MESSAGES',
-		value,
-		messageType: type
-	};
-};
-export const deleteMessages = (city) => {	
-	return {
-		type: 'DELETE_MESSAGES',
 	};
 };
 

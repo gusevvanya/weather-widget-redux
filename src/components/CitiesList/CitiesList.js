@@ -17,7 +17,7 @@ const CitiesList = ({cities, currentCity, onCityClick, onDeleteCityClick}) => {
 			<City 
 				key={city}
 				name={city}
-				className={ classNames( 'city', {active} ) }
+				className={classNames('city', {active})}
 				onCityClick={onCityClick}
 				onDeleteCityClick={onDeleteCityClick}
 			/>
