@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 
 import MessageItem from './MessageItem';
 
-const MessageList = ({messages, onClearMessageClick}) => {
-  if(!messages) return null;
-  
+const MessageList = ({ messages, onClearMessageClick }) => {
+  if (!messages) return null;
+
   const buttonClickHandler = (e) => {
     e.preventDefault();
     onClearMessageClick();
-
   };
   const messagesList = messages.map((message, index) => (
-    <MessageItem 
+    <MessageItem
       key={index}
       value={message.value}
       type={message.type}
@@ -36,8 +35,8 @@ const MessageList = ({messages, onClearMessageClick}) => {
 };
 
 MessageList.propTypes = {
-  messages: PropTypes.array.isRequired,
-  onClearMessageClick: PropTypes.func.isRequired
+  messages: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClearMessageClick: PropTypes.func.isRequired,
 };
 
 export default MessageList;

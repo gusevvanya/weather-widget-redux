@@ -1,3 +1,8 @@
+import {
+  ADD_CITY,
+  DELETE_CITY,
+} from '../constants';
+
 const initialState = ['London', 'Kiev'];
 
 const deleteCity = (state, city) => (
@@ -6,10 +11,10 @@ const deleteCity = (state, city) => (
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case 'ADD_CITY':
+    case ADD_CITY:
       return [...state, action.city];
 
-    case 'DELETE_CITY':
+    case DELETE_CITY:
       return deleteCity(state, action.city);
 
     default:

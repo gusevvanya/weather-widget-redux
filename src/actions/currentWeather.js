@@ -1,4 +1,6 @@
+import { SET_WEATHER } from '../constants';
+
 export default weather => ({
-  type: 'SET_WEATHER',
+  type: SET_WEATHER,
   weather,
 });

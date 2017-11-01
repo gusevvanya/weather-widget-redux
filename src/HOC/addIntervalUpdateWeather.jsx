@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchCity } from '../actions/cities';
 
@@ -29,8 +30,13 @@ function addIntervalUpdateWeather(WrappedComponent) {
   });
 
   const mapStateToProps = state => ({
-    currentCity: state.currentCity,
+    currentCity: state.ui.currentCity,
   });
+
+  addIntervalUpdateWeatherWrapComponent.propTypes = {
+    fetchCity: PropTypes.func.isRequired,
+    currentCity: PropTypes.string.isRequired,
+  };
 
   return connect(mapStateToProps, mapDispatchToProps)(addIntervalUpdateWeatherWrapComponent);
 }

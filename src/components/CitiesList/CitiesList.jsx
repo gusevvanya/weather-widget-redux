@@ -37,7 +37,7 @@ const CitiesList = ({
 };
 
 CitiesList.propTypes = {
-  cities: PropTypes.array.isRequired,
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentCity: PropTypes.string.isRequired,
   onCityClick: PropTypes.func.isRequired,
   onDeleteCityClick: PropTypes.func.isRequired,

@@ -2,26 +2,12 @@ import { connect } from 'react-redux';
 import { deleteCity, fetchCity } from '../../actions/cities';
 import { deleteMessages } from '../../actions/ui/messages';
 
-// const mapStateToProps = state => ({
-//   cities: state.cities,
-//   currentWeather: state.currentWeather,
-
-//   messages: state.ui.messages,
-//   currentCity1: state.ui.currentCity,
-//   currentCity: state.ui.currentCity,
-// });
-
-const mapStateToProps = state => {
-  // console.log(state, "11111")
-  return {
-    cities: state.cities,
-    currentWeather: state.currentWeather,
-
-    messages: state.ui.messages,
-    currentCity1: state.ui.currentCity,
-    currentCity: state.ui.currentCity,
-  }
-};
+const mapStateToProps = state => ({
+  cities: state.cities,
+  currentWeather: state.currentWeather,
+  messages: state.ui.messages,
+  currentCity1: state.ui.currentCity,
+});
 
 const mapDispatchToProps = dispatch => ({
   onDeleteCityClick: (city) => {
@@ -37,4 +23,5 @@ const mapDispatchToProps = dispatch => ({
     dispatch(deleteMessages());
   },
 });
+
 export default WrappedComponent => connect(mapStateToProps, mapDispatchToProps)(WrappedComponent);

@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -12,7 +13,6 @@ import './css/index.css';
 ReactDOM.render(
   <Provider store={store}>
     <WeatherWidget />
-
   </Provider>,
   document.getElementById('root'),
 );

@@ -1,3 +1,8 @@
+import {
+  ADD_MESSAGES,
+  DELETE_MESSAGES,
+} from '../../constants';
+
 function addMessages(state, action) {
   const newMessage = {
     value: action.value,
@@ -15,9 +20,9 @@ function addMessages(state, action) {
 
 export default function (state = [], action) {
   switch (action.type) {
-    case 'ADD_MESSAGES':
+    case ADD_MESSAGES:
       return addMessages(state, action);
-    case 'DELETE_MESSAGES':
+    case DELETE_MESSAGES:
       return [];
     default:
       return state;

@@ -11,6 +11,10 @@ const WeatherContent = ({ currentCity, weather }) => (
 
 WeatherContent.propTypes = {
   currentCity: PropTypes.string.isRequired,
+  weather: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
 };
 
 export default WeatherContent;

@@ -1,10 +1,20 @@
+/* global fetch:false */
 import { isCityExist } from '../reducers/cities';
 import setCurrentWeather from './currentWeather';
 import { addMessage } from './ui/messages';
 import setCurrentCity from './ui/currentCity';
+import {
+  ADD_CITY,
+  DELETE_CITY,
+} from '../constants';
 
 const addCity = city => ({
-  type: 'ADD_CITY',
+  type: ADD_CITY,
+  city,
+});
+
+const removeCity = city => ({
+  type: DELETE_CITY,
   city,
 });
 
@@ -14,10 +24,7 @@ export const deleteCity = city => (dispatch, getState) => {
     dispatch(setCurrentCity(''));
   }
   dispatch(addMessage('Сity was deleted', 'success'));
-  dispatch({
-    type: 'DELETE_CITY',
-    city,
-  });
+  dispatch(removeCity(city));
 };
 
 export const fetchCity = city => (dispatch, getState) => {

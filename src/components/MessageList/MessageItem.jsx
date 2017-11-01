@@ -8,8 +8,8 @@ const MessageItem = ({ value, type }) => (
 );
 
 MessageItem.propTypes = {
-	value: PropTypes.string.isRequired,
-	type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default MessageItem;

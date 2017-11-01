@@ -9,4 +9,4 @@ const WrappedComponent = compose(
   addIntervalUpdateWeather,
 )(Component);
 
-export default WrappedComponent
+export default WrappedComponent;

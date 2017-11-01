@@ -31,7 +31,7 @@ class SearchForm extends Component {
 				onSubmit={this.onSearchSubmit}
 			>	
 				<TextField
-					onTextFieldChange = {this.setSearchValue}
+					onTextFieldChange={this.setSearchValue}
 					value={this.state.searchValue}
 				/>
 				<Button>

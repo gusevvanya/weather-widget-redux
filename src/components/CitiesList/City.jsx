@@ -17,12 +17,12 @@ const City = (props) => {
       className={props.className}
       onClick={onCityClick}
     >
-      <span 
+      <button
         className="close"
         onClick={onDeleteCityClick}
       >
         x
-      </span>
+      </button>
       {props.name}
     </a>
   );
