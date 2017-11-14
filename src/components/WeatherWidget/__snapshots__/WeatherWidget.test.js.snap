@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherWidget renders correctly 1`] = `
+"<WeatherWidget cities={{...}} currentWeather=\\"\\" onSearchSubmit={[Function]} onCityClick={[Function]} onDeleteCityClick={[Function]} onClearMessageClick={[Function]} currentCity1=\\"\\" messages={{...}}>
+  <div className=\\"weatherWidget\\">
+    <SearchForm onSearchSubmit={[Function]}>
+      <form className=\\"search\\" onSubmit={[Function]}>
+        <TextField onTextFieldChange={[Function]} value=\\"\\">
+          <input type=\\"text\\" value=\\"\\" onChange={[Function]} />
+        </TextField>
+        <Button>
+          <button>
+            Search
+          </button>
+        </Button>
+      </form>
+    </SearchForm>
+  </div>
+</WeatherWidget>"
+`;
+
+exports[`WeatherWidget renders correctly2 1`] = `
+"<WeatherWidget cities={{...}} currentWeather=\\"\\" onSearchSubmit={[Function]} onCityClick={[Function]} onDeleteCityClick={[Function]} onClearMessageClick={[Function]} currentCity1=\\"\\" messages={{...}}>
+  <div className=\\"weatherWidget\\">
+    <SearchForm onSearchSubmit={[Function]}>
+      <form className=\\"search\\" onSubmit={[Function]}>
+        <TextField onTextFieldChange={[Function]} value=\\"\\">
+          <input type=\\"text\\" value=\\"\\" onChange={[Function]} />
+        </TextField>
+        <Button>
+          <button>
+            Search
+          </button>
+        </Button>
+      </form>
+    </SearchForm>
+  </div>
+</WeatherWidget>"
+`;
