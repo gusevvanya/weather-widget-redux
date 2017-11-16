@@ -11,6 +11,8 @@ const CitiesList = ({
   onCityClick,
   onDeleteCityClick,
 }) => {
+  if (cities.length === 0) return null;
+
   const citiesList = cities.map((city) => {
     let active = false;
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WeatherWidget renders correctly 1`] = `
-"<WeatherWidget cities={{...}} currentWeather=\\"\\" onSearchSubmit={[Function]} onCityClick={[Function]} onDeleteCityClick={[Function]} onClearMessageClick={[Function]} currentCity1=\\"\\" messages={{...}}>
+"<WeatherWidget cities={{...}} currentWeather=\\"21.25\\" onSearchSubmit={[Function]} onCityClick={[Function]} onDeleteCityClick={[Function]} onClearMessageClick={[Function]} currentCity1=\\"London\\" messages={{...}}>
   <div className=\\"weatherWidget\\">
     <SearchForm onSearchSubmit={[Function]}>
       <form className=\\"search\\" onSubmit={[Function]}>
@@ -15,25 +15,48 @@ exports[`WeatherWidget renders correctly 1`] = `
         </Button>
       </form>
     </SearchForm>
-  </div>
-</WeatherWidget>"
-`;
-
-exports[`WeatherWidget renders correctly2 1`] = `
-"<WeatherWidget cities={{...}} currentWeather=\\"\\" onSearchSubmit={[Function]} onCityClick={[Function]} onDeleteCityClick={[Function]} onClearMessageClick={[Function]} currentCity1=\\"\\" messages={{...}}>
-  <div className=\\"weatherWidget\\">
-    <SearchForm onSearchSubmit={[Function]}>
-      <form className=\\"search\\" onSubmit={[Function]}>
-        <TextField onTextFieldChange={[Function]} value=\\"\\">
-          <input type=\\"text\\" value=\\"\\" onChange={[Function]} />
-        </TextField>
-        <Button>
-          <button>
-            Search
-          </button>
-        </Button>
-      </form>
-    </SearchForm>
+    <CitiesList cities={{...}} currentCity=\\"London\\" onCityClick={[Function]} onDeleteCityClick={[Function]}>
+      <div className=\\"cities\\">
+        <City name=\\"London\\" className=\\"city active\\" onCityClick={[Function]} onDeleteCityClick={[Function]}>
+          <a className=\\"city active\\" onClick={[Function]}>
+            <button className=\\"close\\" onClick={[Function]}>
+              x
+            </button>
+            London
+          </a>
+        </City>
+        <City name=\\"Kharkov\\" className=\\"city\\" onCityClick={[Function]} onDeleteCityClick={[Function]}>
+          <a className=\\"city\\" onClick={[Function]}>
+            <button className=\\"close\\" onClick={[Function]}>
+              x
+            </button>
+            Kharkov
+          </a>
+        </City>
+      </div>
+    </CitiesList>
+    <WeatherContent weather=\\"21.25\\" currentCity=\\"London\\">
+      <div className=\\"weather\\">
+        London
+        <br />
+        21.25
+         °F
+      </div>
+    </WeatherContent>
+    <MessageList messages={{...}} onClearMessageClick={[Function]}>
+      <div className=\\"messageList\\">
+        <ul>
+          <MessageItem value=\\"New massage\\" type=\\"success\\">
+            <li className=\\"success\\">
+              New massage
+            </li>
+          </MessageItem>
+        </ul>
+        <button onClick={[Function]}>
+          x
+        </button>
+      </div>
+    </MessageList>
   </div>
 </WeatherWidget>"
 `;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherContent should render 1`] = `
+"<div className=\\"weather\\">
+  London
+  <br />
+  23.43
+   °F
+</div>"
+`;

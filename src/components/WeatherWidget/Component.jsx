@@ -24,27 +24,21 @@ const WeatherWidget = ({
       <SearchForm
         onSearchSubmit={onSearchSubmit}
       />
-      {(cities.length !== 0) &&
-        <CitiesList
-          cities={cities}
-          currentCity={currentCity}
-          onCityClick={onCityClick}
-          onDeleteCityClick={onDeleteCityClick}
-        />
-      }
-      {(currentCity.length !== 0) &&
-        <WeatherContent
-          weather={currentWeather}
-          currentCity={currentCity}
-        />
-      }
+      <CitiesList
+        cities={cities}
+        currentCity={currentCity}
+        onCityClick={onCityClick}
+        onDeleteCityClick={onDeleteCityClick}
+      />
+      <WeatherContent
+        weather={currentWeather}
+        currentCity={currentCity}
+      />
 
-      {(messages.length !== 0) &&
-        <MessageList
-          messages={messages}
-          onClearMessageClick={onClearMessageClick}
-        />
-      }
+      <MessageList
+        messages={messages}
+        onClearMessageClick={onClearMessageClick}
+      />
       {children}
     </div>
   );

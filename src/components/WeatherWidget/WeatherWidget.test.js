@@ -12,14 +12,14 @@ describe('WeatherWidget', () => {
 
   beforeAll(() => {
     props = {
-      cities: [],
-      currentWeather: '',
+      cities: ['London', 'Kharkov'],
+      currentWeather: '21.25',
       onSearchSubmit: jest.fn(),
       onCityClick: jest.fn(),
       onDeleteCityClick: jest.fn(),
       onClearMessageClick: jest.fn(),
-      currentCity1: '',
-      messages: [],
+      currentCity1: 'London',
+      messages: [{ value: 'New massage', type: 'success' }],
     };
   });
 
@@ -30,10 +30,5 @@ describe('WeatherWidget', () => {
 
   it('renders correctly', () => {
     expect(weatherWidgetShallow.debug()).toMatchSnapshot();
-  });
-  it('render cities if the param "cities" recived', () => {
-    console.log(weatherWidgetShallow.debug());
-    weatherWidgetShallow.setProps({ cities: ['sdf'] });
-    console.log(weatherWidgetShallow.debug());
   });
 });

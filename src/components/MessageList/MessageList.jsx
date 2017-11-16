@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MessageItem from './MessageItem';
 
 const MessageList = ({ messages, onClearMessageClick }) => {
-  if (!messages) return null;
+  if (messages.length === 0) return null;
 
   const buttonClickHandler = (e) => {
     e.preventDefault();
@@ -19,18 +19,16 @@ const MessageList = ({ messages, onClearMessageClick }) => {
   ));
 
   return (
-    messages && (
-      <div className="messageList">
-        <ul>
-          {messagesList}
-        </ul>
-        <button
-          onClick={buttonClickHandler}
-        >
-          x
-        </button>
-      </div>
-    )
+    <div className="messageList">
+      <ul>
+        {messagesList}
+      </ul>
+      <button
+        onClick={buttonClickHandler}
+      >
+        x
+      </button>
+    </div>
   );
 };
 
