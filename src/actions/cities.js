@@ -19,6 +19,10 @@ const removeCity = city => ({
 });
 
 export const deleteCity = city => (dispatch, getState) => {
+  if (!isCityExist(getState(), city)) {
+    dispatch(addMessage('Сity can\'t be deleted!', 'error'));
+    return false;
+  }
   if (getState().ui.currentCity === city) {
     dispatch(setCurrentWeather(''));
     dispatch(setCurrentCity(''));
@@ -28,10 +32,10 @@ export const deleteCity = city => (dispatch, getState) => {
 };
 
 export const fetchCity = city => (dispatch, getState) => {
-  if (!city) return;
+  if (!city) return false;
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c2a8d55ea1dba73a31e902ea7002b7c7`;
 
-  fetch(url)
+  return fetch(url)
     .then((response) => {
       if (response.ok) {
         return response.json();
