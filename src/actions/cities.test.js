@@ -14,7 +14,7 @@ import {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('actions cities', () => {
+describe('Сities actions', () => {
   const store = mockStore({
     cities: [
       'Kiev',
@@ -46,7 +46,7 @@ describe('actions cities', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('Should create ADD_MESSAGES, SET_WEATHER, SET_CURRENT_CITY, DELETE_CITY  if delete current city', () => {
+  it('Should create ADD_MESSAGES, SET_WEATHER, SET_CURRENT_CITY, DELETE_CITY actions if delete current city', () => {
     const expectedActions = [
       { type: SET_WEATHER, weather: '' },
       { type: SET_CURRENT_CITY, city: '' },
@@ -59,7 +59,7 @@ describe('actions cities', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('Should create SET_CURRENT_CITY, SET_WEATHER, ADD_CITY, ADD_MESSAGES', () => {
+  it('Should create SET_CURRENT_CITY, SET_WEATHER, ADD_CITY, ADD_MESSAGES actions if fetch new', () => {
     fetchMock.getOnce('*', { main: { temp: '66' } });
 
     const expectedActions = [
@@ -74,7 +74,7 @@ describe('actions cities', () => {
     });
   });
 
-  it('Should create error ADD_MESSAGES if fetch returned 404', () => {
+  it('Should create error ADD_MESSAGES actions if fetch returned 404', () => {
     fetchMock.getOnce('*', { status: 404 });
 
     const expectedActions = [

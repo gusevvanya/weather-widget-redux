@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherContent should render 1`] = `
+exports[`WeatherContent Should render 1`] = `
 "<div className=\\"weather\\">
   London
   <br />

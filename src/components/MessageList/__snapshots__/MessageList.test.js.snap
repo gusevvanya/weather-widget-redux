@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MessageList should render 1`] = `
+exports[`MessageList Should render 1`] = `
 "<div className=\\"messageList\\">
   <ul>
     <MessageItem value=\\"New massage\\" type=\\"success\\" />

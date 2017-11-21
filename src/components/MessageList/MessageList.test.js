@@ -24,18 +24,20 @@ describe('MessageList', () => {
     messageListShallow = Enzyme.shallow(<MessageList {...props} />);
   });
 
-  it('should render', () => {
+  it('Should render', () => {
     expect(messageListShallow.debug()).toMatchSnapshot();
   });
 
-  it('test buttonClickHandler method', () => {
-    expect(props.onClearMessageClick.mock.calls.length).toBe(0);
+  it('onClearMessageClick function should be fired after clicking on the close button', () => {
     messageListMount.find('button').simulate('click');
     expect(props.onClearMessageClick.mock.calls.length).toBe(1);
   });
 
-  it('render messageList if the param "messages" recived', () => {
+  it('Render messageList if the param "messages" recived', () => {
     expect(messageListMount.find('.messageList').length).toBe(1);
+  });
+
+  it('Dont\'t render messageList if the param "messages" is not recived', () => {
     messageListMount.setProps({ messages: [] });
     expect(messageListMount.find('.messageList').length).toBe(0);
   });

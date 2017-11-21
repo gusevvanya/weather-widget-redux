@@ -27,12 +27,15 @@ describe('CitiesList', () => {
     citiesListShallow = Enzyme.shallow(<CitiesList {...props} />);
   });
 
-  it('should render', () => {
+  it('Should render', () => {
     expect(citiesListShallow.debug()).toMatchSnapshot();
   });
 
-  it('render cities if the param "cities" recived', () => {
+  it('Render City component if the param "cities" recived', () => {
     expect(citiesListMount.find(City).length).toBe(1);
+  });
+
+  it('Do not render City component if the param "cities" is not recived', () => {
     citiesListMount.setProps({ cities: [] });
     expect(citiesListMount.find(City).length).toBe(0);
   });

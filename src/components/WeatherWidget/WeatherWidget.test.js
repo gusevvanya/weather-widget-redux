@@ -8,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('WeatherWidget', () => {
   let props;
-  let weatherWidgetShallow;
+  let weatherWidgetMount;
 
   beforeAll(() => {
     props = {
@@ -25,10 +25,10 @@ describe('WeatherWidget', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    weatherWidgetShallow = Enzyme.mount(<WeatherWidget {...props} />)
+    weatherWidgetMount = Enzyme.mount(<WeatherWidget {...props} />)
   });
 
   it('renders correctly', () => {
-    expect(weatherWidgetShallow.debug()).toMatchSnapshot();
+    expect(weatherWidgetMount.debug()).toMatchSnapshot();
   });
 });

@@ -23,12 +23,15 @@ describe('WeatherContent', () => {
     WeatherContentShallow = Enzyme.shallow(<WeatherContent {...props} />);
   });
 
-  it('should render', () => {
+  it('Should render', () => {
     expect(WeatherContentShallow.debug()).toMatchSnapshot();
   });
 
-  it('render weather if the param "currentCity" recived', () => {
+  it('Render weather if the param "currentCity" recived', () => {
     expect(WeatherContentMount.find('.weather').length).toBe(1);
+  });
+
+  it('Don\'t render weather if the param "currentCity" is not recived', () => {
     WeatherContentMount.setProps({ currentCity: '' });
     expect(WeatherContentMount.find('.weather').length).toBe(0);
   });

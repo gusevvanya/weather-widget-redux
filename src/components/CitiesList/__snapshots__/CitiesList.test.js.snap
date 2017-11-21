@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CitiesList should render 1`] = `
+exports[`CitiesList Should render 1`] = `
 "<div className=\\"cities\\">
   <City name=\\"London\\" className=\\"city active\\" onCityClick={[Function]} onDeleteCityClick={[Function]} />
 </div>"
